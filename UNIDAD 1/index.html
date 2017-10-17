@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contacto | Seguro No Pagamos Cooperativa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
+
 <body>
-    <h1>Contacto</h1>
-    <h2>Completa tus datos de contacto</h2>
-    <form action="">
-        <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre">
-        </div>
-        <div>
-                <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" id="apellido">
-        </div>
-        <div>
-                <label for="dni">DNI</label>
-                <input type="text" name="dni" id="dni">
-        </div>
-        <div>
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email">
-        </div>
-        <div>
-                <label for="telefono">Teléfono</label>
-                <input type="text" name="telefono" id="telefono">
-        </div>
-        <div>
-                <label for="curso">Curso</label>
-                <select name="curso" id="curso">
-                    <option value="1">Básico</option>
-                    <option value="2">Intermedio</option>
-                    <option value="3">Premium</option>
-                </select>
+    <div class="form-box">
+        <div class="head">
+            <h1>Contacto</h1>
         </div>
 
-    </form>
+        <div class="inner-form">
+            <form action="">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido">
+                </div>
+                <div class="form-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" name="dni" id="dni">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" name="telefono" id="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="curso">Curso</label>
+                    <select name="curso" id="curso" class="curso" onchange="mostrarPrecio()">
+                        <option value="0">Seleccionar...</option>
+                        <option value="1">Básico</option>
+                        <option value="2">Intermedio</option>
+                        <option value="3">Premium</option>
+                    </select>
+                </div>
+                <div id="cotizacion">
+                    <p>Precio:
+                        <span id="precio"></span>
+                    </p>
+                </div>
+                <button type="button" class="enviar-btn">Enviar</button>
+            </form>
+        </div>
+
+    </div>
 </body>
+
 </html>
