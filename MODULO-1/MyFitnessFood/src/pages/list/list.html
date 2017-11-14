@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ingreso de consumos diarios</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-item>
+    <ion-label color="primary" floating>Dia del consumo</ion-label>
+    <ion-datetime displayFormat="D MMM YYYY" [(ngModel)]="selectedDate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Hora del consumo</ion-label>
+    <ion-datetime displayFormat="hh mm A" [(ngModel)]="selectedHour"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Alimento consumido</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Estado de animo</ion-label>
+    <ion-select [(ngModel)]="selectedStateOfMind" multiple="false">
+      <ion-option>Fastidioso</ion-option>
+      <ion-option>Contento</ion-option>
+      <ion-option>Deprimido</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Tipo de alimento</ion-label>
+    <ion-select [(ngModel)]="selectedTypeOfFood" multiple="false">
+      <ion-option>Desayuno</ion-option>
+      <ion-option>Almuerzo</ion-option>
+      <ion-option>Merienda</ion-option>
+      <ion-option>Cena</ion-option>
+      <ion-option>Colación</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <br>
+  <div class="center">
+      <button ion-button round (click)="presentToast()">Cargar</button>
+  </div>
+
+</ion-content>
