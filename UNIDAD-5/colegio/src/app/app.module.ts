@@ -10,6 +10,8 @@ import { QuienessomosPage } from './../pages/quienessomos/quienessomos';
 import { MyApp } from './app.component';
 import { InfoPage } from '../pages/info/info';
 import { MisTabsPage } from '../pages/mis-tabs/mis-tabs';
+import { FormsModule } from '@angular/forms'
+import { RegistroPage } from '../pages/registro/registro';
 
 
 @NgModule({
@@ -19,10 +21,12 @@ import { MisTabsPage } from '../pages/mis-tabs/mis-tabs';
     InfoPage,
     InicioPage,
     ListadoPage,
-    QuienessomosPage
+    QuienessomosPage,
+    RegistroPage
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -32,6 +36,7 @@ import { MisTabsPage } from '../pages/mis-tabs/mis-tabs';
     InfoPage,
     InicioPage,
     ListadoPage,
+    RegistroPage,
     QuienessomosPage
   ],
   providers: [

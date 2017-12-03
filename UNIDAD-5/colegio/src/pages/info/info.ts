@@ -15,7 +15,17 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class InfoPage {
 
+  private nombre:string;
+  private apellido:string;
+  private telefono:string;
+  private email:string;
+  private descripcion:string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  logInfo(){
+    console.log(`${this.nombre} ${this.apellido} ${this.telefono} ${this.email} ${this.descripcion}`);
   }
 
   ionViewDidLoad() {
