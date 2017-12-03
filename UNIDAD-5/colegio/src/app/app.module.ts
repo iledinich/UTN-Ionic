@@ -12,6 +12,7 @@ import { InfoPage } from '../pages/info/info';
 import { MisTabsPage } from '../pages/mis-tabs/mis-tabs';
 import { FormsModule } from '@angular/forms'
 import { RegistroPage } from '../pages/registro/registro';
+import { ListadoDetailPage } from '../pages/listado-detail/listado-detail';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RegistroPage } from '../pages/registro/registro';
     InicioPage,
     ListadoPage,
     QuienessomosPage,
-    RegistroPage
+    RegistroPage,
+    ListadoDetailPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { RegistroPage } from '../pages/registro/registro';
     InicioPage,
     ListadoPage,
     RegistroPage,
-    QuienessomosPage
+    QuienessomosPage,
+    ListadoDetailPage
   ],
   providers: [
     StatusBar,

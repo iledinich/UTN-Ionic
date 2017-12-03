@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 /**
  * Generated class for the RegistroPage page.
@@ -22,9 +22,9 @@ export class RegistroPage {
   private password1:string;
   private email:string;
   private password2:string;
-  private todo : FormGroup;
+
   
-  constructor(private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
       
   }
 

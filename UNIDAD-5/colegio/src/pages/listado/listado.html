@@ -14,5 +14,24 @@
 
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        Nombre del curso
+      </ion-col>
+      <ion-col>
+        Año
+      </ion-col>
+      <ion-col>
+        Cantidad de alumnos
+      </ion-col>
+    </ion-row>
+    
+    <ion-row *ngFor="let curso of cursos; let i = index" (click)='navegar(i)'>
+      <ion-col>{{curso.nombre}}</ion-col>
+      <ion-col>{{curso.anio}}</ion-col>
+      <ion-col>{{curso.cantAlumnos}}</ion-col>
+    </ion-row>
 
+  </ion-grid>
 </ion-content>
