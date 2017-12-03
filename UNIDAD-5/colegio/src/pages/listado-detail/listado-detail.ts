@@ -17,6 +17,7 @@ import { Alumno } from './alumno';
 })
 export class ListadoDetailPage {
 
+  //unidad 7
   alumnos:Alumno[];
   titleCurse:string;
 
