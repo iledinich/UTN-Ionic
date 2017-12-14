@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -8,12 +9,17 @@ import { IngresosPage } from '../pages/ingresos-consumos/ingresos-consumos';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { RegistroPage } from '../pages/registro/registro';
+
+import {IonicStorageModule} from '@ionic/storage';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    IngresosPage
+    IngresosPage,
+    LoginPage,
+    RegistroPage
   ],
   imports: [
     BrowserModule,
@@ -23,16 +29,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
       dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes' ],
       dayShortNames: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ],
     }),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    IngresosPage
+    IngresosPage,
+    RegistroPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Storage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
