@@ -13,6 +13,7 @@ import { MisTabsPage } from '../pages/mis-tabs/mis-tabs';
 import { FormsModule } from '@angular/forms'
 import { RegistroPage } from '../pages/registro/registro';
 import { ListadoDetailPage } from '../pages/listado-detail/listado-detail';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ListadoDetailPage } from '../pages/listado-detail/listado-detail';
   imports: [
     BrowserModule,
     FormsModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,6 +47,7 @@ import { ListadoDetailPage } from '../pages/listado-detail/listado-detail';
   providers: [
     StatusBar,
     SplashScreen,
+    Storage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

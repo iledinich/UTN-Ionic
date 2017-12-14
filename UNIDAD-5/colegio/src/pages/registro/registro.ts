@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-
+import { Storage } from "@ionic/storage";
+import { Usuario } from './usuario';
 
 /**
  * Generated class for the RegistroPage page.
@@ -22,10 +23,10 @@ export class RegistroPage {
   private password1:string;
   private email:string;
   private password2:string;
-
+  private newUser:Usuario;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
-      
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, private storage: Storage) {
+
   }
 
   
@@ -49,14 +50,24 @@ export class RegistroPage {
       });
       alert.present();
     }else{
-        let alert = this.alertCtrl.create({
-          title: 'Exito!',
-          subTitle: 'Te has registrado con exito!',
-          buttons: ['OK']
+        this.storage.ready().then(()=>{
+          //Persisto los datos en el storage
+          this.newUser = new Usuario(this.nombre,this.apellido,this.password1,this.email);
+
+          this.storage.set(this.email,this.newUser);
+            this.storage.get(this.email).then(
+              (val) => {
+                 let alert = this.alertCtrl.create({
+                  title: 'Exito!',
+                  subTitle: 'Te has registrado con exito!',
+                  buttons: ['OK']
+                });
+                alert.present();
+                }
+            )
         });
-        alert.present();
     }
-    console.log(form.value);
+
   }
 
   ionViewDidLoad() {

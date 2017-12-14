@@ -16,25 +16,26 @@
 <ion-content padding>
     <form #form="ngForm" (ngSubmit)="logForm(form)">
     <ion-item>
-        <ion-label fixed>Nombre</ion-label>
+        <ion-label>Nombre</ion-label>
         <ion-input [(ngModel)]="nombre" name="nombre" type="text" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>Apellido</ion-label>
+        <ion-label>Apellido</ion-label>
         <ion-input type="text" [(ngModel)]="apellido" name="apellido" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>Email</ion-label>
+        <ion-label>Email</ion-label>
         <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>Password</ion-label>
+        <ion-label>Password</ion-label>
         <ion-input type="password" [(ngModel)]="password1" name="password1" required></ion-input>
       </ion-item>
       <ion-item>
-          <ion-label fixed>Confirmar password</ion-label>
+          <ion-label>Confirmar password</ion-label>
           <ion-input type="password" [(ngModel)]="password2" name="password2" required></ion-input>
         </ion-item>
+        <br>
       <button ion-button type="submit">Singup</button>
     </form>
 </ion-content>

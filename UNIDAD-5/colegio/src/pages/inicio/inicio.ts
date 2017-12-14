@@ -1,7 +1,10 @@
+import { ListadoPage } from './../listado/listado';
 import { QuienessomosPage } from './../quienessomos/quienessomos';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Storage } from "@ionic/storage";
+
 
 /**
  * Generated class for the InicioPage page.
@@ -21,29 +24,48 @@ export class InicioPage {
   private password:string;
 
   quienessomos = QuienessomosPage;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, public storage:Storage) {
   }
 
   login(){
-    if(this.email != 'a@a.com' || this.password != '123'){
-      let alert = this.alertCtrl.create({
-        title: 'Error de login',
-        subTitle: 'Contraseña y/o email incorrecto',
-        buttons: ['OK']
-      });
-      alert.present();
-    }else{
-      let alert = this.alertCtrl.create({
-        title: 'Login exitoso',
-        subTitle: 'Bievenido!',
-        buttons: ['OK']
-      });
-      alert.present();
-    }
+
+    //Verifico que el usuario exista en el localstorage
+    this.storage.forEach(
+      (value,key)=>{
+        if(key==this.email){
+          //Verifico la password
+          this.storage.get(key).then(
+            (val)=>{
+              if(val.password == this.password){
+                this.msgPoPUp("Loguin exitoso","Bienvenido");
+                //Lo redirigo al curso
+                this.navCtrl.push(
+                  ListadoPage
+                )
+              }else{
+                this.msgPoPUp("Contraseña incorrecta","Intente con otra contraseña");
+              }
+            }
+          )
+        }else{
+          this.msgPoPUp("No existe el usuario","Intente con otro usuario");
+        }
+      }
+    )
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InicioPage');
+  }
+
+  msgPoPUp(title:string, msg:string){
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: msg,
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }
