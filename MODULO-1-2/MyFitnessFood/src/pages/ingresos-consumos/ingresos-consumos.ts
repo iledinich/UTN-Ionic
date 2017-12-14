@@ -4,9 +4,9 @@ import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html'
+  templateUrl: 'ingresos-consumos.html'
 })
-export class ListPage {
+export class IngresosPage {
   selectedStateOfMind: any;
   selectedTypeOfFood: any;
   selectedDate: any;
