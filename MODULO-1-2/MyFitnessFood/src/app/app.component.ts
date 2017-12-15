@@ -1,4 +1,3 @@
-import { RegistroPage } from './../pages/registro/registro';
 import { LoginPage } from './../pages/login/login';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
